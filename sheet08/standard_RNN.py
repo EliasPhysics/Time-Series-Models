@@ -109,7 +109,6 @@ def train(model, data, learning_rate, moment=0, optimizer_function='SGD', print_
         # 2. Run the model forward pass with input X and initial hidden state h0
         output, _ = model.forward(X, h0)
         # 3. Calculate the loss between model output and target Y
-        epoch_loss = loss_function(output, Y)
         if (regul != None): penalty = regul(model.parameters())
         else: penalty = 0
         epoch_loss = loss_function(output, Y) + penalty
